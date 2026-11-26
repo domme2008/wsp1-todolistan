@@ -1,0 +1,15 @@
+<h2>Ny ToDo</h2>
+
+<form class="add" action="/todos" method="post">
+    <label>Titel: <input type="text" name="todo_name"></label>
+    <label>Beskrivning: <input type="text" name="todo_description"></label>
+    <label>Kategori: 
+        <select name="todo_category">
+	        <% @categories.each do |category| %>
+		        <option value="<%= category['id'] %>"><%= category['name'] %></option>
+            <% end %>
+        </select>
+    </label>
+    <label> <input type="checkbox" name="todo_completed" value="0">
+    <input type="submit" value="Spara">
+</form>

@@ -1,0 +1,16 @@
+<h2>Uppdatera ToDo</h2>
+
+<form action="/todos/<%= @todo["id"] %>/update" method="post">
+    <label>Titel: <input type="text" name="todo_name" value="<% @todo["todo_name"]%>"></label>
+    <label>Beskrivning: <input type="text" name="todo_description" value="<% @todo["todo_description"]%>"></label>
+    <label>Kategori: 
+        <select name="todo_category">
+            <% @categories.each do |category| %>
+		        <option value="<%= category['id'] %>"><%= category['name'] %></option>
+            <% end %>
+        </select>
+    </label>
+    <label><input type="checkbox" name="todo_completed" value="1"></label>
+    <input type="submit" value="Ändra">
+</form>
+

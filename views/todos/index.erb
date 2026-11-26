@@ -1,1 +1,11 @@
-<img src="/img/glhf.png">
+<h2>To-Dos:</h2>
+
+<ul>
+    <% @todos.each do | todo |%>
+        <li>
+            <h3><%= todo["name"] %></h3>
+            <p><%= todo["description"]%></p>
+        </li>
+    <% end %>
+</ul>
+        
